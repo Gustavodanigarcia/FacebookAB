@@ -10,12 +10,9 @@ import java.util.Locale;
 public class Tiempos {
 
 	static Calendar now = Calendar.getInstance();		
-	
-	
-	
 
 	
-	public static int diasDelMes(int mes, int año){
+	public static int diasDelMes(int mes, int aÃ±o){
         switch(mes){
             case 1:  // Enero
             case 3:  // Marzo
@@ -31,9 +28,9 @@ public class Tiempos {
             case 11: // Noviembre
                 return 30;
             case 2:  // Febrero
-                if ( ((año%100 == 0) && (año%400 == 0)) ||
-                        ((año%100 != 0) && (año%  4 == 0))   )
-                    return 29;  // Año Bisiesto
+                if ( ((aÃ±o%100 == 0) && (aÃ±o%400 == 0)) ||
+                        ((aÃ±o%100 != 0) && (aÃ±o%  4 == 0))   )
+                    return 29;  // AÃ±o Bisiesto
                 else
                     return 28;
             default:
@@ -47,7 +44,7 @@ public class Tiempos {
 	
 	  public static int inicioDelMes(int Mes, boolean PrimerDia) throws ParseException {
       	
-      	
+    
 			int year = 2019;
 			int month = Mes;
 			int day = 0;
@@ -59,11 +56,11 @@ public class Tiempos {
 			day = getDia();
 			
 			int i=0;
-			// First convert to Date. This is one of the many ways.
+			
 			String dateString = String.format("%d-%d-%d", year, month, day);
 			java.util.Date date = new SimpleDateFormat("yyyy-M-d").parse(dateString);
 		
-			// Then get the day of week from the Date based on specific locale.
+			
 			String dayOfWeek = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date);
 
 			
@@ -118,38 +115,19 @@ public class Tiempos {
 		  int i=0;
 		  int DiasQueQuedan = 6 - DiaInicial;
 		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
+
 		  if(!pd) {
-		 
-		  
-		 
 	
-		
 		for(int m = 0 ;m<a;m++) {
-		
-			
-			
-			
+
 			  if(DiasQueQuedan > 6) {
 			  i++;
 			  DiasQueQuedan = 0;
 			  }
 			  DiasQueQuedan++;
-			  
-			  
-			  
+		  
 		}
-			
-		
-		
-		
-		
+	
 		
 		  System.out.println("cantidad de semanas: " +i);
 		  return i;
@@ -157,10 +135,7 @@ public class Tiempos {
 		  
 		  }else
 			  return 0;
-		
-		  
-		  
+  
 	  }
-	  
-	  
+
 }
