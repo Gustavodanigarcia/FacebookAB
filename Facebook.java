@@ -27,10 +27,8 @@ public class Facebook {
 		// TODO Auto-generated method stub
 		
 		Facebook face = new Facebook();
-		face.verHora();
-		
+		face.verHora();	
 	}
-	
 
 	private Robot robot;
 	public Keyboard keyboard;
@@ -54,7 +52,7 @@ public class Facebook {
 		int numDelDiaActual;
 		boolean pd = false;
 		int r;
-		for(int m=0;m<(13-numDelMes);m++) {
+		for(int m=0;m<(13-numDelMes);m++) {//mes
 			
 			
 			int cantidadDiasMes = Tiempos.diasDelMes(numDelMes+m,2019);
@@ -81,11 +79,8 @@ public class Facebook {
 			
 			pd = true;
 		
-			for(int j=0;j<(cantidadDiasMes-numDelDiaActual);j++) {
-				
-				
-				
-				
+			for(int j=0;j<(cantidadDiasMes-numDelDiaActual);j++) {//dia
+		
 					r = rd.nextInt(lista.length+1);
 				
 				publicarFace(r); //PUBLICAR
@@ -119,8 +114,6 @@ public class Facebook {
 					yenY++;
 							}
 							
-				
-			
 				robot.delay(1500);
 				robot.delay(1500);
 				robot.delay(1500);
@@ -129,24 +122,10 @@ public class Facebook {
 			
 										} //FIN DEL CICLO DEL DIA ( J ) PRINCIPAL
 			
-										} //FIN DEL MES
+										} //FIN DEL MES (I)
 				
 										} //FIN DE LA FUNCION
 			
-			
-			
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	public void publicarFace(int x) throws HeadlessException, UnsupportedFlavorException, IOException, AWTException {
 		
@@ -301,35 +280,17 @@ public class Facebook {
 		AutoClick.leftClick(robot);
 		robot.delay(800);
 		keyboard.type("19");
-		
-		
-		
-		
-		/*
-		/////CALENDARIO
-		
 
-		
+		/////CALENDARIO
+
 		
 		//////confirmar publicacion DEFINITIVAMENTE
-		 
-		
-		*/
 	
-
-		
 	}
-		
-
-		
-		
-		
-	//CONFIRMAR FECHA: robot.mouseMove(1120, 720);
-		 
-
 	
+	//CONFIRMAR FECHA: robot.mouseMove(1120, 720);
 
-	public void descripcionPublicacion(int x) throws IOException {         //FRASE EN LA REMERA 
+	public void descripcionPublicacion(int x) throws IOException {         //FRASES PUBLICACION
 
 	
 						//REMERA MODAL n DEL 0 AL 4
@@ -359,9 +320,9 @@ public class Facebook {
 				
 	
 
-	BufferedImage bimg = ImageIO.read(lista[x]);
-	int xx          = bimg.getWidth(); //Tamaño de ancho en pixeles
-	int yy         = bimg.getHeight();  //Tamaño de ancho en pixeles
+	BufferedImage bimg = ImageIO.read(lista[x]); //Filtro de publicacion dependiendo la img
+	int xx          = bimg.getWidth(); //TamaÃ±o de ancho
+	int yy         = bimg.getHeight();  //TamaÃ±o de ancho 
 	int num_frase_modal = ThreadLocalRandom.current().nextInt(0, 5);
 	int num_frase_algodon = ThreadLocalRandom.current().nextInt(5,9);
 	int num_frase_buzo = ThreadLocalRandom.current().nextInt(9,12);
@@ -383,7 +344,6 @@ public class Facebook {
 	
 	if(xx == 1608 && yy == 1748)
 		keyboard.type(frases[num_frase_algodon]); 
-	
 
 	}
 	
